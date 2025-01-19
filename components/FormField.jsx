@@ -10,7 +10,7 @@ const FormField = ({ title, value, placeholder, handleChangeText, otherStyles, .
 
   return (
     <View className={`space-y-2 ${otherStyles}`}>
-      <Text className='text-base text-gray-100 font-pmedium'>{title}</Text>
+      <Text className='text-base text-gray-100 font-pmedium pl-1'>{title}</Text>
 
       <View className="border border-black-200 w-full h-16 px-4 bg-gray-100 rounded-xl focus:border-secondary items-center flex flex-row">
         <TextInput 
