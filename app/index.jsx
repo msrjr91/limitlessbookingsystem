@@ -22,6 +22,8 @@ export default function App() {
             handlePress={() => router.push('/sign-in')}
             containerStyles="w-full absolute bottom-10"
           />
+          {/* Delete after implementing auth */}
+          <Link href="/home" className="text-lg font-psemibold text-secondary">Skip Sign in</Link> 
 
         </View>
       </ScrollView>

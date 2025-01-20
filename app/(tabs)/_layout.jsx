@@ -1,22 +1,29 @@
-import { Image, View, Text } from 'react-native'
+import { Image, View, Text, Dimensions } from 'react-native'
 import React from 'react'
 import { Tabs, Redirect } from 'expo-router'
 import { icons } from '../../constants'
 
+const { height: SCREEN_HEIGHT } = Dimensions.get('window')
+const TAB_BAR_HEIGHT = SCREEN_HEIGHT * 0.15; // 15% of the screen height
+const ICON_SIZE = TAB_BAR_HEIGHT * 0.25; // Icon size is 40% of the tab bar height
+const FONT_SIZE = TAB_BAR_HEIGHT * 0.07
+
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
-        <View className="flex-1 items-center justify-center gap-2">
+        <View className="flex-1 items-center justify-center gap-2 w-[25vw]">
             <Image 
                 source={icon}
                 resizeMode='contain'
                 tintColor={color}
-                className='w-8 h-8'
+                style={{ width: ICON_SIZE, height: ICON_SIZE }}
+                // className='w-8 h-8'
             />
             <Text 
                 className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`}
-                style={{ 
-                    color: color,
-                }}
+                style={{ color, fontSize: FONT_SIZE }}
+                // style={{ 
+                //     color: color,
+                // }}
             >
                 { name }
             </Text>
@@ -36,7 +43,10 @@ const TabsLayout = () => {
                     backgroundColor: '#062033',
                     borderTopWidth: 1, 
                     borderTopColor: '#232522',
-                    height: '15%',
+                    height: '12%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center',
                 }
             }}
         >

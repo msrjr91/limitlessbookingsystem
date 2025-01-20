@@ -42,13 +42,3 @@ const RootLayout = () => {
 }
 
 export default RootLayout
-
-// const styles = StyleSheet.create({
-//     container: {
-//         display: 'flex',
-//         backgroundColor: '#fff',
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//     }
-// })

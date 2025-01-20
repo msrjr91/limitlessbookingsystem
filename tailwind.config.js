@@ -31,10 +31,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#062033",
+        primary: "#0D2031",
         secondary: {
-          DEFAULT: "#FF9C01",
-          100: "#FF9001",
+          DEFAULT: "#D69006",
+          100: "#AD6E14",
           200: "#FF8E01",
         },
         black: {
