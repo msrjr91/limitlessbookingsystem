@@ -5,7 +5,7 @@ import { icons } from '../../constants'
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window')
 const TAB_BAR_HEIGHT = SCREEN_HEIGHT * 0.15; // 15% of the screen height
-const ICON_SIZE = TAB_BAR_HEIGHT * 0.25; // Icon size is 40% of the tab bar height
+const ICON_SIZE = TAB_BAR_HEIGHT * 0.2; // Icon size is 40% of the tab bar height
 const FONT_SIZE = TAB_BAR_HEIGHT * 0.07
 
 const TabIcon = ({ icon, color, name, focused }) => {
@@ -16,14 +16,10 @@ const TabIcon = ({ icon, color, name, focused }) => {
                 resizeMode='contain'
                 tintColor={color}
                 style={{ width: ICON_SIZE, height: ICON_SIZE }}
-                // className='w-8 h-8'
             />
             <Text 
                 className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`}
                 style={{ color, fontSize: FONT_SIZE }}
-                // style={{ 
-                //     color: color,
-                // }}
             >
                 { name }
             </Text>
@@ -40,10 +36,10 @@ const TabsLayout = () => {
                 tabBarActiveTintColor: '#FFA001',
                 tabBarInactiveTintColor: '#CDCDE0',
                 tabBarStyle: {
-                    backgroundColor: '#062033',
+                    backgroundColor: '#0D2031',
                     borderTopWidth: 1, 
-                    borderTopColor: '#232522',
-                    height: '12%',
+                    borderTopColor: '#0D2031',
+                    height: '10%',
                     flexDirection: 'row',
                     justifyContent: 'space-evenly',
                     alignItems: 'center',
@@ -66,30 +62,45 @@ const TabsLayout = () => {
                 }}
             />
             <Tabs.Screen 
-                name="bookmark"
+                name="schedule"
                 options={{
-                    title: 'Bookmark',
+                    title: 'Schedule',
                     headerShown: false,
                     tabBarIcon: ({ color, focused }) => (
                         <TabIcon 
-                            icon={icons.bookmark}
+                            icon={icons.schedule}
                             color={color}
-                            name="Bookmark"
+                            name="Schedule"
                             focused={focused}
                         />
                     )
                 }}
             />
             <Tabs.Screen 
-                name="create"
+                name="book"
                 options={{
-                    title: 'Create',
+                    title: 'Book',
                     headerShown: false,
                     tabBarIcon: ({ color, focused }) => (
                         <TabIcon 
-                            icon={icons.plus}
+                            icon={icons.addsession}
                             color={color}
-                            name="Create"
+                            name="Book"
+                            focused={focused}
+                        />
+                    )
+                }}
+            />
+            <Tabs.Screen 
+                name="community"
+                options={{
+                    title: 'Community',
+                    headerShown: false,
+                    tabBarIcon: ({ color, focused }) => (
+                        <TabIcon 
+                            icon={icons.community}
+                            color={color}
+                            name="Community"
                             focused={focused}
                         />
                     )
