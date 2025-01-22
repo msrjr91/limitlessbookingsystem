@@ -8,18 +8,36 @@ import { icons } from '../../constants'
 const Profile = () => {
   return (
     <SafeAreaView className="bg-primary h-full relative">
-        <Pressable onPress={() => router.push('/notifications')} className="absolute top-[10%] right-[5%]" style={{ zIndex: 10 }}>
-          <Image 
-            source={icons.notification}
-            className='w-6 h-6'
-            resizeMode='contain'
-            style={{ tintColor: '#CDCDE0' }}
-          />
-        </Pressable>
-        <ScrollView contentContainerStyle={{ height: '100%'}} className="">
-          <View className='w-full justify-center items-center h-full px-4'>
 
-            <Text className="text-lg font-psemibold text-secondary">Profile Here</Text>
+        <View className="flex-row justify-end items-center p-2">
+          <Pressable onPress={() => router.push('/settings')}>
+            <Image 
+              source={icons.settingsProfile}
+              className='w-7 h-7'
+              resizeMode='contain'
+              style={{ tintColor: '#CDCDE0' }}
+            />
+          </Pressable>
+          <Pressable onPress={() => router.push('/notifications')}>
+            <Image 
+              source={icons.notification}
+              className='w-7 h-7 mx-3'
+              resizeMode='contain'
+              style={{ tintColor: '#CDCDE0' }}
+            />
+          </Pressable>
+        </View>
+
+        <ScrollView contentContainerStyle={{ height: '100%'}} className="">
+          <View className='w-full items-center h-full px-4'>
+            <Image 
+              source={icons.profileBlank}
+              className='w-10 h-10'
+              resizeMode='contain'
+              style={{ tintColor: '#CDCDE0' }}
+            />
+
+            <Text className="text-lg font-psemibold text-secondary">Profile Details</Text>
 
           </View>
         </ScrollView>
