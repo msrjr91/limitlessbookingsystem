@@ -15,6 +15,7 @@ import addsession from "../assets/icons/addsession.png";
 import schedule from "../assets/icons/schedule.png";
 import community from "../assets/icons/community.png";
 import notification from "../assets/icons/notification.png";
+import back from "../assets/icons/back.png";
 
 export default {
   play,
@@ -34,4 +35,5 @@ export default {
   schedule, 
   community,
   notification,
+  back,
 };
