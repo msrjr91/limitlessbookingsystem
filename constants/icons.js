@@ -18,6 +18,7 @@ import notification from "../assets/icons/notification.png";
 import back from "../assets/icons/back.png";
 import profileBlank from "../assets/icons/profile-blank.png";
 import settingsProfile from "../assets/icons/settings-profile.png";
+import chat from "../assets/icons/chat.png";
 
 export default {
   play,
@@ -40,4 +41,5 @@ export default {
   back,
   profileBlank,
   settingsProfile,
+  chat,
 };

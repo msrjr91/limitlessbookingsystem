@@ -3,21 +3,30 @@ import React from 'react'
 import { Link, router, Tabs } from 'expo-router'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { icons } from '../constants'
+import { icons } from '../../constants'
 
 const Notifications = () => {
   return (
     <SafeAreaView className="bg-primary h-full relative">
-        <View className="items-center">
-            <Pressable onPress={() => router.back()} className="absolute top-[10%] left-[5%]" style={{ zIndex: 10 }}>
+        <View className="flex-row justify-between items-center p-2">
+            <Pressable onPress={() => router.back()}>
                 <Image 
                     source={icons.back}
-                    className='w-6 h-6'
+                    className='w-7 h-7 ml-3'
                     resizeMode='contain'
                     style={{ tintColor: '#CDCDE0' }}
                 />
             </Pressable>
             <Text className="text-lg font-psemibold text-secondary">Your Notifications</Text>
+            <Pressable onPress={() => router.push('/messages')}>
+            <Image 
+                source={icons.chat}
+                className='w-7 h-7 mr-3'
+                resizeMode='contain'
+                style={{ tintColor: '#CDCDE0' }}
+            />
+            </Pressable>
+            
         </View>
         <ScrollView contentContainerStyle={{ height: '100%'}} className="p-4">
             <View className='w-full items-center h-full px-5'>

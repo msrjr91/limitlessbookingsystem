@@ -9,9 +9,9 @@ const Schedule = () => {
   return (
     <SafeAreaView className="bg-primary h-full relative">
         <View className="flex-row justify-end items-center p-2">
-          <Pressable onPress={() => router.push('/notifications')}>
+          <Pressable onPress={() => router.push('/messages')}>
             <Image 
-              source={icons.notification}
+              source={icons.chat}
               className='w-7 h-7 mx-3'
               resizeMode='contain'
               style={{ tintColor: '#CDCDE0' }}
