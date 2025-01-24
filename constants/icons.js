@@ -19,6 +19,12 @@ import back from "../assets/icons/back.png";
 import profileBlank from "../assets/icons/profile-blank.png";
 import settingsProfile from "../assets/icons/settings-profile.png";
 import chat from "../assets/icons/chat.png";
+import draft from "../assets/icons/draft.png";
+import comments from "../assets/icons/comments.png";
+import love from "../assets/icons/love.png";
+import verified from "../assets/icons/verified.png";
+import loveRed from "../assets/icons/love-red.png";
+
 
 export default {
   play,
@@ -42,4 +48,9 @@ export default {
   profileBlank,
   settingsProfile,
   chat,
+  draft,
+  comments, 
+  love, 
+  verified, 
+  loveRed
 };

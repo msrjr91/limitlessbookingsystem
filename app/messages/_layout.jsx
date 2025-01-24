@@ -1,17 +1,41 @@
-import { View, Text, ScrollView, Pressable, Image } from 'react-native'
+import { View, Text, ScrollView, Pressable, Image, TouchableOpacity } from 'react-native'
 import { React, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '../../constants'
+import { router } from 'expo-router'
+import Announcements from './announcements'
+import Community from './community'
+import Trainers from './trainers'
+import DirectMessages from './directmessage'
+
 
 const MessageLayout = () => {
 
-  const [messagemenu, setmessagemenu] = useState("announements")
+  const [messagemenu, setmessagemenu] = useState('1')
 
   const menuItems =[
-    {title: 'Announements'},
-    {title: 'Community'}, 
-    {title: 'Trainers'}
+    {id: '1', title: 'Announements'},
+    {id: '2', title: 'Community'}, 
+    {id: '3', title: 'Trainers'}, 
+    {id: '4', title: 'Your Messages'},
   ]
+
+  const handlePress = (id) => {
+    setmessagemenu(id);
+  };
+
+  const renderContent = () => {
+    switch (messagemenu) {
+      case '1':
+        return <Announcements />;
+      case '2':
+        return <Community />
+      case '3': 
+        return <Trainers />
+      case '4':
+        return <DirectMessages />
+    }
+  }
 
   return (
     <SafeAreaView className="bg-primary h-full relative">
@@ -25,17 +49,46 @@ const MessageLayout = () => {
                     style={{ tintColor: '#CDCDE0' }}
                 />
             </Pressable>
-            <Text className="text-lg font-psemibold text-secondary">Communication Center</Text>
             <Image 
-                source={icons.chat}
+                source={icons.draft}
                 className='w-7 h-7 mr-3'
                 resizeMode='contain'
-                style={{ tintColor: '#0D2031' }}
+                style={{ tintColor: '#CDCDE0' }}
             />
         </View>
-      <View className="mt-5">
-        <Text>Horizontal/Scrollable/Swipeable Menu for type of posts</Text>
-      </View>
+        <View className='h-full'>
+          <View className="mt-5">
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              className=""
+              contentContainerStyle={{ paddingHorizontal: 10 }}
+            >
+              {menuItems.map((item) => (
+                <TouchableOpacity
+                  key={item.id}
+                  className={`px-5 py-2 rounded-full mr-3 ${
+                    messagemenu === item.id ? 'bg-secondary-100': 'bg-[#080E13]'
+                  }`}
+                  onPress={() => handlePress(item.id)}
+                >
+                  <Text
+                    className={`text-[#CDCDE0] ${
+                      messagemenu === item.id ? 'font-psmibold' : 'font-light'
+                    }`}
+                  >
+                    {item.title}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+          <View className="h-[1px] bg-[#080E13] my-5"/>
+          <View className=''>
+            {renderContent()}
+          </View>
+        </View>
+
     </SafeAreaView>
   )
 }
