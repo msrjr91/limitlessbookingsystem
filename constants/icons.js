@@ -24,6 +24,8 @@ import comments from "../assets/icons/comments.png";
 import love from "../assets/icons/love.png";
 import verified from "../assets/icons/verified.png";
 import loveRed from "../assets/icons/love-red.png";
+import dot from "../assets/icons/dot.png";
+import addComment from "../assets/icons/add-comment.png";
 
 
 export default {
@@ -52,5 +54,7 @@ export default {
   comments, 
   love, 
   verified, 
-  loveRed
+  loveRed,
+  dot, 
+  addComment,
 };

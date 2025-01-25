@@ -39,6 +39,12 @@ const MessageLayout = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full relative">
+        {/* <Image 
+          source={icons.addComment}
+          className='w-10 h-10 absolute bottom-[5%] right-[5%]'
+          resizeMode='contain'
+          style={{ tintColor: '#D69006'}}
+        /> */}
 
         <View className="flex-row justify-between items-center p-2">
             <Pressable onPress={() => router.back()}>
