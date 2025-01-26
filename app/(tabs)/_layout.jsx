@@ -3,14 +3,14 @@ import React from 'react'
 import { Tabs, Redirect } from 'expo-router'
 import { icons } from '../../constants'
 
-const { height: SCREEN_HEIGHT } = Dimensions.get('window')
+const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window')
 const TAB_BAR_HEIGHT = SCREEN_HEIGHT * 0.15; // 15% of the screen height
-const ICON_SIZE = TAB_BAR_HEIGHT * 0.2; // Icon size is 40% of the tab bar height
+const ICON_SIZE = TAB_BAR_HEIGHT * 0.25; // Icon size is 40% of the tab bar height
 const FONT_SIZE = TAB_BAR_HEIGHT * 0.07
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
-        <View className="flex-1 items-center justify-center gap-2 w-[25vw]">
+        <View className="flex-1 items-center justify-center gap-2 h-full w-[20vw]">
             <Image 
                 source={icon}
                 resizeMode='contain'
@@ -39,10 +39,11 @@ const TabsLayout = () => {
                     backgroundColor: '#0D2031',
                     borderTopWidth: 1, 
                     borderTopColor: '#0D2031',
-                    height: '10%',
+                    height: SCREEN_HEIGHT * 0.1,
                     flexDirection: 'row',
                     justifyContent: 'space-evenly',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
+                    paddingTop: SCREEN_HEIGHT * 0.02,
                 }
             }}
         >
@@ -58,7 +59,7 @@ const TabsLayout = () => {
                             name="Home"
                             focused={focused}
                         />
-                    )
+                    ),
                 }}
             />
             <Tabs.Screen 

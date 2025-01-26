@@ -45,7 +45,7 @@ const Notifications = () => {
             name="Mikasa"
             message="posted: Just wanted to say that I'm loving my training so far!"
             timeSince="3h"
-            seen={true}
+            seen={false}
             />
             <NotificationCard 
             notificationType="reminder"
@@ -66,7 +66,7 @@ const Notifications = () => {
                 name="Armin"
                 message="posted: Don't forget about the group session tomorrow at 5 PM!"
                 timeSince="2h"
-                seen={false}
+                seen={true}
             />
             <NotificationCard 
                 notificationType="post"
@@ -80,7 +80,7 @@ const Notifications = () => {
                 name=""
                 message="See you for your massage appointment tonight at 6:30 PM!"
                 timeSince="4h"
-                seen={false}
+                seen={true}
             />
             <NotificationCard 
                 notificationType="post"
@@ -94,7 +94,7 @@ const Notifications = () => {
                 name="Jean"
                 message="posted: The weekend bootcamp was amazing! Thanks to everyone who joined."
                 timeSince="6h"
-                seen={false}
+                seen={true}
             />
             <NotificationCard 
                 notificationType="post"
@@ -115,14 +115,14 @@ const Notifications = () => {
                 name="Erwin"
                 message="posted: Stay consistent! Progress is a marathon, not a sprint."
                 timeSince="1d"
-                seen={false}
+                seen={true}
             />
             <NotificationCard 
                 notificationType="post"
                 name="Zeke"
                 message="posted: Just finished a killer session with the trainers. Highly recommend!"
                 timeSince="5h"
-                seen={false}
+                seen={true}
             />
             </View>
 

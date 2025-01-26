@@ -13,7 +13,7 @@ const MessageLayout = () => {
 
   const [messagemenu, setmessagemenu] = useState('1')
 
-  const menuItems =[
+  const menuItems = [
     {id: '1', title: 'Announements'},
     {id: '2', title: 'Community'}, 
     {id: '3', title: 'Trainers'}, 
