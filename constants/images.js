@@ -9,6 +9,8 @@ import community1 from "../assets/images/community1.png";
 import community2 from "../assets/images/community2.png";
 import community3 from "../assets/images/community3.png";
 import community4 from "../assets/images/community4.png";
+import community5 from "../assets/images/community5.png";
+
 
 
 export default { 
@@ -23,4 +25,5 @@ export default {
     community2,
     community3,
     community4,
+    community5,
 };

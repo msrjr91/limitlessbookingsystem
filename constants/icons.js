@@ -26,6 +26,7 @@ import verified from "../assets/icons/verified.png";
 import loveRed from "../assets/icons/love-red.png";
 import dot from "../assets/icons/dot.png";
 import addComment from "../assets/icons/add-comment.png";
+import swipe from "../assets/icons/swipe.png";
 
 
 export default {
@@ -57,4 +58,5 @@ export default {
   loveRed,
   dot, 
   addComment,
+  swipe,
 };

@@ -59,12 +59,12 @@ const NotificationCard = ({
           {/* Notification type and name */}
           <View className="flex-row items-center mb-1">
             {notificationType === 'post' && (
-              <Text className="text-white font-regular">
+              <Text className="text-white text-sm font-regular">
                 <Text className="font-bold">{name}</Text> {message}
               </Text>
             )}
             {notificationType === 'reminder' && (
-              <Text className="text-white font-regular">{message}</Text>
+              <Text className="text-white text-sm font-regular">{message}</Text>
             )}
           </View>
 
