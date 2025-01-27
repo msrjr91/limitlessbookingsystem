@@ -10,6 +10,12 @@ import community2 from "../assets/images/community2.png";
 import community3 from "../assets/images/community3.png";
 import community4 from "../assets/images/community4.png";
 import community5 from "../assets/images/community5.png";
+import event1 from "../assets/images/event1.png";
+import event2 from "../assets/images/event2.png";
+import event3 from "../assets/images/event3.png";
+import event4 from "../assets/images/event4.png";
+import event5 from "../assets/images/event5.png";
+import event6 from "../assets/images/event6.png";
 
 
 
@@ -26,4 +32,10 @@ export default {
     community3,
     community4,
     community5,
+    event1,
+    event2,
+    event3,
+    event4,
+    event5,
+    event6,
 };

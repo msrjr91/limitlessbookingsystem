@@ -89,7 +89,7 @@ const Home = () => {
           </View>
 
           {/* Line with dynamic underline */}
-          <View className="relative h-[1px] bg-[#080E13] my-5">
+          <View className="relative h-[1px] bg-[#080E13] mt-5">
             <View
               className="absolute h-[2px] bg-[#FFA001] rounded-full"
               style={{

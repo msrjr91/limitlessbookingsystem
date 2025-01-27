@@ -31,7 +31,7 @@ const Notifications = () => {
 
       {/* Notifications List */}
       <View>
-        <ScrollView className="">
+        <ScrollView className="" showsVerticalScrollIndicator={false}>
             <View>
             <NotificationCard 
             notificationType="post"

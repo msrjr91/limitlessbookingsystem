@@ -49,7 +49,7 @@ const Community = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const renderItem = ({ item }) => (
-    <View style={{ width: width, alignItems: 'center' }}>
+    <View style={{ width: width, alignItems: 'center', marginTop: '10' }}>
       {/* Image on top */}
       <View className="relative" style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
         <Image source={item.uri} style={{ width: width * 0.9, height: height * 0.3, borderRadius: 10, opacity: isVisible ? 0.5 : 1}} />
