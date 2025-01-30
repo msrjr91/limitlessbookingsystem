@@ -24,22 +24,23 @@ const EventCard = ({
             justifyContent: 'center',
             alignItems: 'center',
             backgroundColor: 'white',
-            marginBottom: height * 0.01
+            marginBottom: height * 0.01,
+            borderRadius: 10,
           }} 
     >
         {/* left half */}
-        <View style={{ flex: 1, justifyContent: 'center' }}>
+        <View style={{ flex: 1, justifyContent: 'center'}}>
             <Image 
                 source={image}
                 resizeMode='cover'
-                style={{ width: '100%', height: '100%'}} // Make the image responsive
+                style={{ width: '100%', height: '100%'}}
             />
         </View>
         {/* right half */}
         <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: 5, alignItems: 'center', height: '100%' }}>
             <Text className="text-xs font-pregular">{day}, {date} | {location}</Text>
-            <Text className="text-sm font-psemibold items-center">{title}</Text>
-            <Text className="text-xs text-center" numberOfLines={3}>{description}</Text>
+            <Text className="mt-1 text-sm font-pbold items-center">{title}</Text>
+            <Text className="text-xs text-center mt-1" numberOfLines={4}>{description}</Text>
             <Link className={`text-xs font-pregular text-center min-w-[40%] border p-1 mt-5 bg-primary text-white`} href=''>{readyToBuy ? 'Buy Tickets' : 'Details'}</Link>
         </View>
     </View>

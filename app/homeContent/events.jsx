@@ -6,7 +6,7 @@ import { icons, images } from '../../constants'
 const Events = () => {
   return (
     <View className="h-full w-full items-center mt-5">
-      <Text className="text-xl mb-2 font-psemibold text-white">Upcoming Events</Text>
+      {/* <Text className="text-xl mb-2 font-psemibold text-white">Upcoming Events</Text> */}
       <View>
         <ScrollView contentContainerStyle={{ alignItems: 'center', }} showsVerticalScrollIndicator={false}>
           <View>
