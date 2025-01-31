@@ -71,7 +71,7 @@ const TabsLayout = () => {
                         <TabIcon 
                             icon={icons.schedule}
                             color={color}
-                            name="Schedule"
+                            name="My Sessions"
                             focused={focused}
                         />
                     )

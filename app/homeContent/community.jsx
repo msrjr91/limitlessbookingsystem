@@ -41,7 +41,7 @@ const Community = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setisVisible(false);
+      setisVisible(false)
     }, 1000);
     return () => clearTimeout(timer);
   }, []);

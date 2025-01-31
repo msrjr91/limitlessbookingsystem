@@ -38,7 +38,7 @@ const MonthlyChallenge = ({
                     source={icons.rightArrow}
                     resizeMode='contain'
                     tintColor={'#1E1E2D'}
-                    className={`${completed ? 'bg-[#D69006]' : 'bg-[#00A300]'} rounded-sm p-1 h-6 w-6`}
+                    className={`${completed ? 'bg-[#D69006]' : 'bg-[#00A300]'} rounded-md p-1 h-6 w-6`}
                 />
             </Pressable>
         </View>

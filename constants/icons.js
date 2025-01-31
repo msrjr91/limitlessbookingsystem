@@ -27,6 +27,14 @@ import loveRed from "../assets/icons/love-red.png";
 import dot from "../assets/icons/dot.png";
 import addComment from "../assets/icons/add-comment.png";
 import swipe from "../assets/icons/swipe.png";
+import experience from "../assets/icons/experience.png";
+import rank from "../assets/icons/rank.png";
+import streak from "../assets/icons/streak.png";
+import proteinBar from "../assets/icons/protein-bar.png";
+import proteinShake from "../assets/icons/protein-shake.png";
+import breakfast from "../assets/icons/breakfast.png";
+import eventTicket from "../assets/icons/event-ticket.png";
+import voucher from "../assets/icons/voucher.png";
 
 
 export default {
@@ -59,4 +67,12 @@ export default {
   dot, 
   addComment,
   swipe,
+  experience,
+  rank,
+  streak,
+  proteinBar,
+  proteinShake,
+  breakfast,
+  eventTicket,
+  voucher,
 };

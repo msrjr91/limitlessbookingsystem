@@ -1,6 +1,8 @@
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, Dimensions } from 'react-native';
 import React from 'react';
 import { icons } from '../constants';
+
+const { height, width } = Dimensions.get('window');
 
 const MessageCard = ({ 
   name, 
@@ -9,25 +11,27 @@ const MessageCard = ({
   membership, 
   time, 
   textBody, 
+  photo,
   liked, 
   handlePress 
 }) => {
   return (
-    <View className="flex-row justify-start w-full">
+    <View className="flex-row w-full mb-2">
       {/* LEFT HALF: profile icon */}
-      <View className="px-4">
-        <Image 
-          source={icons.profileBlank}
-          className="w-12 h-12"
-          resizeMode="contain"
-          style={{ tintColor: '#CDCDE0' }}
-        />
-      </View>
+      <Image 
+        source={icons.profileBlank}
+        className="w-14 h-14 mr-2"
+        resizeMode="contain"
+        style={{ tintColor: '#CDCDE0' }}
+      />
+      {/* LEFT HALF: profile icon */}
+
 
       {/* RIGHT HALF: body */}
-      <View className="flex-1 px-3 py-2 rounded-lg">
+      <View className="flex-1">
         {/* Identifiers */}
-        <View className="flex-row items-center mb-1">
+
+        <View className="flex-row items-center">
           <Text className="text-white font-bold mr-2">{name}</Text>
           <Image 
             source={icons.verified}
@@ -39,12 +43,22 @@ const MessageCard = ({
         </View>
 
         {/* Text Body */}
-        <View className="mb-2">
-          <Text className="text-white text-sm">{textBody}</Text>
-        </View>
+        <Text className="text-white text-sm mt-1">{textBody}</Text>
+        {/* photo */}
+
+        {photo && (
+          <Image 
+            source={photo}
+            style={{ 
+              width: width * 0.8,
+              height: height * 0.25,
+            }}
+            className='rounded-lg mt-2'
+          />
+        )}
 
         {/* Like, Comment Icons */}
-        <View className="flex-row justify-end space-x-3">
+        <View className="flex-row justify-end mt-3">
           <Pressable onPress={handlePress}>
             <Image 
               source={liked ? icons.loveRed : icons.love}
@@ -55,12 +69,15 @@ const MessageCard = ({
           <Pressable onPress={handlePress}>
             <Image 
               source={icons.comments}
-              className="w-8 h-8 mx-5"
+              className="w-8 h-8 mx-7"
               resizeMode="contain"
             />
           </Pressable>
         </View>
+      
       </View>
+    {/* RIGHT HALF: body */}
+
     </View>
   );
 };

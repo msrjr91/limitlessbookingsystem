@@ -1,6 +1,7 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import MessageCard from '../../components/MessageCard'
+import { images } from '../../constants'
 
 const Announcements = () => {
   
@@ -14,7 +15,8 @@ const Announcements = () => {
         name="Mike Ross"
         membership="gold"
         time="10:13 PM 23 Jan, 2025"
-        textBody="Excepteur est ullamco commodo eu qui est pariatur consequat adipisicing. Mollit Lorem eu occaecat sit dolore. Ea et minim sunt nostrud pariatur velit qui aute sint sit nulla velit ea qui. Officia pariatur tempor qui incididunt elit et. Amet occaecat enim veniam eu veniam reprehenderit irure. Laborum consectetur in dolore id amet fugiat voluptate officia duis excepteur labore ad labore. Consequat id aute fugiat labore ut duis duis exercitation qui est cillum."
+        textBody="Had a great time at Ninja Warrior!"
+        photo={images.rockclimbing}
         liked={true}
         handlePress={handlePress}
       />
@@ -30,7 +32,8 @@ const Announcements = () => {
         name="Virgil Van Dijk"
         membership="gold"
         time="7:19 PM 23 Jan, 2025"
-        textBody="I credit Limitless for all of my trophies. Thanks, Levi!"
+        textBody="Great day hiking with the Limitless fam."
+        photo={images.hikingpost}
         liked={true}
         handlePress={handlePress}
       />

@@ -16,6 +16,8 @@ import event3 from "../assets/images/event3.png";
 import event4 from "../assets/images/event4.png";
 import event5 from "../assets/images/event5.png";
 import event6 from "../assets/images/event6.png";
+import rockclimbing from "../assets/images/rockclimbing.png";
+import hikingpost from "../assets/images/hikingpost.png";
 
 
 
@@ -38,4 +40,6 @@ export default {
     event4,
     event5,
     event6,
+    rockclimbing,
+    hikingpost,
 };
