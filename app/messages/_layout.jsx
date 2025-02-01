@@ -38,7 +38,7 @@ const MessageLayout = () => {
   }
 
   return (
-    <SafeAreaView className="bg-primary h-full relative">
+    <SafeAreaView className="bg-primary h-full">
         {/* <Image 
           source={icons.addComment}
           className='w-10 h-10 absolute bottom-[5%] right-[5%]'

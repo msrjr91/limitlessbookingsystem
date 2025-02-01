@@ -8,10 +8,11 @@ const ProfileCard = ({
     icon,
     iconColor,
     text,
-    textContext
+    textContext,
+    style
 }) => {
   return (
-    <View className="flex-col w-[32%] rounded-xl bg-[#080E13] items-center p-2">
+    <View className={`flex-col rounded-xl bg-primary items-center p-2 ${style}`}>
         <Image 
             source={icon}
             resizeMode='contain'

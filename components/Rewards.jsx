@@ -22,16 +22,10 @@ const Rewards = () => {
     };
 
     return (
-        <View className="w-full bg-[#080E13] rounded-xl p-3">
+        <View className="w-full bg-primary rounded-xl p-3">
             <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                scrollEnabled={true} 
-                contentContainerStyle={{
-                    width: '100%',
-                    paddingHorizontal: 20, 
-                    flexGrow: 1,
-                }}
             >
                 {rewardItems.map((item) => (
                     <TouchableOpacity key={item.id} onPress={() => handlePress(item.id)}>
