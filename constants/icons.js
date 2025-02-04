@@ -35,7 +35,10 @@ import proteinShake from "../assets/icons/protein-shake.png";
 import breakfast from "../assets/icons/breakfast.png";
 import eventTicket from "../assets/icons/event-ticket.png";
 import voucher from "../assets/icons/voucher.png";
-import progress from "../assets/icons/progress.png";
+import trendDown from "../assets/icons/trend-down.png";
+import trendUp from "../assets/icons/trend-up.png";
+import barchart from "../assets/icons/barchart.png";
+import weight from "../assets/icons/weight.png";
 
 
 export default {
@@ -76,5 +79,8 @@ export default {
   breakfast,
   eventTicket,
   voucher,
-  progress
+  trendDown,
+  trendUp,
+  barchart,
+  weight
 };

@@ -22,44 +22,41 @@ const SignIn = () => {
 
   return (
     <SafeAreaView className='bg-primary h-full'>
-      <View className="w-full min-h-[85vh] justify-center items-center px-5">
+      <View className="w-full min-h-[85vh] justify-center items-center px-5 relative">
         <Image
           source={images.logo}
           resizeMode='contain'
-          className='w-3/4 h-1/4'
-        />
-        {/* <Text className='text-xl text-white text-semibold font-psemibold'>
-          Let's get started
-        </Text> */}
-
-        <FormField
-          title="Email"
-          value={form.email}
-          handleChangeText={(e) => setform({ ...form, email: e})}
-          otherStyles="mt-7 w-full"
-          keyboardType="email-address"
-        />
-        <FormField
-          title="Password"
-          value={form.password}
-          handleChangeText={(e) => setform({ ...form, password: e})}
-          otherStyles="mt-7 w-full"
+          className='w-3/4 h-1/4 absolute top-0'
         />
 
-        <CustomButton 
-          title="Sign In"
-          handlePress={submit}
-          containerStyles="mt-10 w-full"
-          isLoading={isSubmitting}
-        />
-        
-        <View className="justify-center pt-5 flex-row gap-2">
-          <Text className="text-lg text-gray-100">
-            Don't have an account? 
-          </Text>
-          <Link href="/sign-up" className="text-lg font-psemibold text-secondary">Sign Up</Link>
+        <View className='w-full'>
+          <FormField
+            title="Email"
+            value={form.email}
+            handleChangeText={(e) => setform({ ...form, email: e})}
+            otherStyles="mt-7 w-full"
+            keyboardType="email-address"
+          />
+          <FormField
+            title="Password"
+            value={form.password}
+            handleChangeText={(e) => setform({ ...form, password: e})}
+            otherStyles="mt-7 w-full"
+          />
+
+          <CustomButton 
+            title="Sign In"
+            handlePress={submit}
+            containerStyles="mt-10 w-full"
+            isLoading={isSubmitting}
+          />     
+          <View className="justify-center pt-5 flex-row gap-2">
+            <Text className="text-lg text-gray-100">
+              Don't have an account? 
+            </Text>
+            <Link href="/sign-up" className="text-lg font-psemibold text-secondary">Sign Up</Link>
+          </View>
         </View>
-
       </View>
     </SafeAreaView>
   )

@@ -10,9 +10,9 @@ import { Link } from 'expo-router'
 const SignUp = () => {
 
   const [form, setform] = useState({
-    username: "",
-    email: "",
-    password: ""
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: ""
   })
 
   const submit = () => {
@@ -23,32 +23,29 @@ const SignUp = () => {
 
   return (
     <SafeAreaView className='bg-primary h-full'>
-      <View className="w-full min-h-[85vh] justify-center items-center px-5">
+      <View className="w-full min-h-[85vh] justify-center items-center px-5 relative">
         <Image
           source={images.logo}
           resizeMode='contain'
-          className='w-3/4 h-1/4'
+          className='w-3/4 h-1/4 absolute top-0'
         />
-        {/* <Text className='text-xl text-white text-semibold font-psemibold'>
-          Let's get started
-        </Text> */}
         <FormField
-          title="Username"
-          value={form.username}
-          handleChangeText={(e) => setform({ ...form, username: e})}
+          title="Current Password"
+          value={form.currentPassword}
+          handleChangeText={(e) => setform({ ...form, currentPassword: e})}
           otherStyles="mt-7 w-full"
         />
         <FormField
-          title="Email"
-          value={form.email}
-          handleChangeText={(e) => setform({ ...form, email: e})}
+          title="New Password"
+          value={form.newPassword}
+          handleChangeText={(e) => setform({ ...form, newPassword: e})}
           otherStyles="mt-7 w-full"
-          keyboardType="email-address"
+          // keyboardType="email-address"
         />
         <FormField
-          title="Password"
-          value={form.password}
-          handleChangeText={(e) => setform({ ...form, password: e})}
+          title="Confirm Password"
+          value={form.confirmPassword}
+          handleChangeText={(e) => setform({ ...form, confirmPassword: e})}
           otherStyles="mt-7 w-full"
         />
 

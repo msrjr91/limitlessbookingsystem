@@ -1,11 +1,12 @@
 import { View, Text, Image, ScrollView, Pressable, Dimensions } from 'react-native'
 import { React, useState } from 'react'
-import { Link, router, Tabs } from 'expo-router'
+import { router } from 'expo-router'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '../../constants'
 import ProfileCard from '../../components/ProfileCard';
 import Rewards from '../../components/Rewards';
+import ProfileSlides from '../../components/ProfileSlides';
 // import LevelProgress from '../../components/levelProgress';
 
 
@@ -40,23 +41,27 @@ const Profile = () => {
           </Pressable>
         </View>
 
-        <View className="items-center mb-2">
+        <View className="flex-row justify-start items-center mb-2 px-3">
           <Image 
             source={icons.profileBlank}
             resizeMode='contain'
             style={{ 
               tintColor: '#CDCDE0',
               height: height * 0.1,
+              width: width * 0.2,
             }}
           />
-          <Text className="text-xl font-pbold text-white">Mike Ross</Text>
-          <Text className="text-sm font-psemibold text-secondary">Gold Member since 25 Mar, 2022</Text>
+          <View className='ml-2'>
+            <Text className="text-xl font-pbold text-white">Mike Ross</Text>
+            <Text className="text-sm font-psemibold text-secondary">Gold Member since 25 Mar, 2022</Text>
+          </View>
 
         </View>
         <View>
           <ScrollView 
             contentContainerStyle={{ 
               height: '100%',
+              width: '100%',
             }} 
             className="bg-white pt-2 px-3"
           >
@@ -91,19 +96,7 @@ const Profile = () => {
               </View>
             </View>
 
-            <View className='w-full h-1/2 px-3 bg-primary rounded-xl p-3'>
-              <View className='w-full flex-row items-center justify-between'>
-                <Text className='text-white font-lg font-psemibold'>My Progress</Text>
-                <Image 
-                  source={icons.progress} 
-                  resizeMode='contain'
-                  style={{
-                    height: height * 0.03,
-                    width: width * 0.05
-                  }}
-                />
-              </View>
-            </View>
+            <ProfileSlides />
 
             
 
