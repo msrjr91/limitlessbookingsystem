@@ -39,6 +39,7 @@ const TabsLayout = () => {
                     backgroundColor: '#0D2031',
                     borderTopWidth: 1, 
                     borderTopColor: '#0D2031',
+                    // borderTopColor: '#FF0000',
                     height: SCREEN_HEIGHT * 0.1,
                     flexDirection: 'row',
                     justifyContent: 'space-evenly',

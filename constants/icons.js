@@ -39,6 +39,8 @@ import trendDown from "../assets/icons/trend-down.png";
 import trendUp from "../assets/icons/trend-up.png";
 import barchart from "../assets/icons/barchart.png";
 import weight from "../assets/icons/weight.png";
+import reward from "../assets/icons/reward.png";
+import challenge from "../assets/icons/challenge.png";
 
 
 export default {
@@ -82,5 +84,7 @@ export default {
   trendDown,
   trendUp,
   barchart,
-  weight
+  weight,
+  reward,
+  challenge,
 };

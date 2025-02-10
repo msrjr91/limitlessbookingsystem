@@ -1,28 +1,31 @@
 import { View, Text, Image, Dimensions } from 'react-native'
 import React from 'react'
-import { icons } from '../constants'
 
-const { height, width } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 const ProfileCard = ({
     icon,
     iconColor,
     text,
     textContext,
-    style
+    style,
+    iconHeight
 }) => {
   return (
-    <View className={`flex-col rounded-xl bg-primary items-center p-2 ${style}`}>
+    <View className={`flex-col justify-evenly h-full p-1 rounded-xl bg-primary items-center ${style}`}>
         <Image 
             source={icon}
             resizeMode='contain'
             style={{
               tintColor: iconColor,
-              height: height * 0.04
+              height: height * 0.05
             }}
         />
-        <Text className="text-white text-xl font-pbold">{text}</Text>
-        <Text className="text-white text-sm font-pregular">{textContext}</Text>
+        {
+          text &&
+          <Text className="text-white text-xl font-pbold text-center">{text}</Text>
+        }
+        <Text className="text-white text-md font-psemibold">{textContext}</Text>
     </View>
   )
 }

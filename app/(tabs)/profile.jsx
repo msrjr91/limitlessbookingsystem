@@ -21,8 +21,11 @@ const Profile = () => {
   //   setPoints((prevPoints) => Math.min(prevPoints + 20, maxPoints)); // Add 20 points per task
   // };
   return (
-    <SafeAreaView className="bg-primary h-full">
-        <View className="flex-row justify-end items-center p-2">
+    <SafeAreaView className="bg-primary h-full w-full">
+      {/* top section */}
+      <View className='relative'>
+        {/* options */}
+        <View className="absolute top-0 right-0 flex-row justify-end items-center p-2">
           <Pressable onPress={() => router.push('/settings')}>
             <Image 
               source={icons.settingsProfile}
@@ -40,8 +43,8 @@ const Profile = () => {
             />
           </Pressable>
         </View>
-
-        <View className="flex-row justify-start items-center mb-2 px-3">
+        {/* profile details */}
+        <View className="flex-row justify-start items-center px-3">
           <Image 
             source={icons.profileBlank}
             resizeMode='contain'
@@ -57,64 +60,65 @@ const Profile = () => {
           </View>
 
         </View>
-        <View>
-          <ScrollView 
-            contentContainerStyle={{ 
-              height: '100%',
-              width: '100%',
-            }} 
-            className="bg-white pt-2 px-3"
-          >
-            
-            <Text className='w-full bg-primary text-white font-lg font-psemibold text-center p-3 rounded-xl mt-2 mb-5'>2025 Summary</Text>
-            
-            <View className='items-center w-full mb-5'>
-              <View className='w-full items-center flex-row justify-between'>
-                {/* <Text className="text-sm font-psemibold text-secondary">Challenger II</Text> */}
-                {/* <LevelProgress points={points} maxPoints={maxPoints}/> */}
-                <ProfileCard 
-                  icon={icons.streak}
-                  iconColor='#ADD8E6'
-                  text={`22`}
-                  textContext={`sessions`}
-                  style='w-[32%]'
-                />
-                <ProfileCard 
-                  icon={icons.experience}
-                  iconColor='#FF8E01'
-                  text={`1320`}
-                  textContext={`XP`}
-                  style='w-[32%]'
-                />
-                <ProfileCard 
-                  icon={icons.rank}
-                  iconColor='#C0C0C0'
-                  text={`II`}
-                  textContext={`Challenger`}
-                  style='w-[32%]'
-                />
-              </View>
-            </View>
-
-            <ProfileSlides />
-
-            
-
-
-            {/* <View className='w-full px-3'>
-              <Text className='w-full text-primary font-lg font-psemibold text-center p-3'>My Rewards</Text>
-              <Rewards />
-            </View> */}
-
-
-
-          </ScrollView>
+      </View>
+      {/* main */}
+      <View className="bg-white px-3 h-[92%] w-full flex-col justify-between">
+        {/* 1/3 */}
+        <View className='h-[32%] w-full'>
+          <View className='h-1/3 w-full items-center justify-center'>
+            <Text className='w-full bg-primary text-white font-xl font-psemibold text-center rounded-xl border borde-red-500 p-3'>2025 Summary</Text>
+          </View>
+          
+          <View className='h-2/3 w-full items-center flex-row justify-between'>
+            <ProfileCard 
+              icon={icons.streak}
+              iconColor='#ADD8E6'
+              text={`22`}
+              textContext={`Sessions`}
+              style='w-[32%]'
+            />
+            <ProfileCard 
+              icon={icons.experience}
+              iconColor='#FF8E01'
+              text={`1320`}
+              textContext={`XP`}
+              style='w-[32%]'
+            />
+            <ProfileCard 
+              icon={icons.rank}
+              iconColor='#C0C0C0'
+              text={`II`}
+              textContext={`Challenger`}
+              style='w-[32%]'
+            />
+          </View>
+        </View>
+        {/* 2/3 */}
+        <View className='w-full h-[40%] bg-primary items-center justify-center rounded-xl'>
+          {/* <ProfileSlides /> */}
+        </View>
+        {/* 3/3 */}
+        <View className='w-full h-[22%] flex-row justify-between pb-2'>
+          <ProfileCard 
+            style='w-[49%]'
+            icon={icons.challenge}
+            text={``}
+            textContext={`Monthly Challenges`}
+          />
+          <ProfileCard 
+            style='w-[49%]'
+            icon={icons.reward}
+            text={``}
+            textContext={`Reward Center`}
+          />
         </View>
 
-      <StatusBar
+      </View>
+
+      {/* <StatusBar
         backgroundColor='#062033'
         style='light'
-      />
+      /> */}
     </SafeAreaView>
   )
 }

@@ -32,9 +32,9 @@ const ProfileSlides = () => {
 
     // Render each slide
     const renderSlide = ({ item }) => (
-        <View className=' h-full'>
-            <View className='items-center border border-white'>
-                <Text className='text-white font-lg font-psemibold'>{item.title}</Text>
+        <View className='h-full w-full items-center relative'>
+            <View className='w-full h-full items-center flex-row'>
+                <Text className='text-white w-full font-lg font-psemibold'>{item.title}</Text>
                 <Image 
                     source={item.icon} 
                     resizeMode='contain'
@@ -46,7 +46,7 @@ const ProfileSlides = () => {
             </View>
 
             {/* Dots Indicator */}
-            <View className='flex-row items-center justify-center border border-white'>
+            <View className='flex-row items-center justify-center w-full absolute bottom-0'>
                 {slides.map((_, index) => (
                     <View
                         key={index}
@@ -61,7 +61,7 @@ const ProfileSlides = () => {
     );
 
     return (
-        <View className='bg-primary w-full h-1/3 p-2 rounded-xl'>
+        <View className='w-[95%] h-[95%] border border-red-500 items-center'>
             <FlatList 
                 data={slides}
                 horizontal
