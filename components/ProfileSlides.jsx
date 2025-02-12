@@ -32,9 +32,9 @@ const ProfileSlides = () => {
 
     // Render each slide
     const renderSlide = ({ item }) => (
-        <View className='h-full w-full items-center relative'>
-            <View className='w-full h-full items-center flex-row'>
-                <Text className='text-white w-full font-lg font-psemibold'>{item.title}</Text>
+        <View className='relative' style={{ width: width * 0.95, height: height,}}>
+            <View className='border border-white w-full flex-row items-center justify-between'>
+                <Text className='text-white font-lg font-psemibold'>{item.title}</Text>
                 <Image 
                     source={item.icon} 
                     resizeMode='contain'
@@ -46,7 +46,7 @@ const ProfileSlides = () => {
             </View>
 
             {/* Dots Indicator */}
-            <View className='flex-row items-center justify-center w-full absolute bottom-0'>
+            {/* <View className='flex-row items-center justify-center w-full absolute'>
                 {slides.map((_, index) => (
                     <View
                         key={index}
@@ -56,25 +56,24 @@ const ProfileSlides = () => {
                         ]}
                     />
                 ))}
-            </View>
+            </View> */}
         </View>
     );
 
     return (
-        <View className='w-[95%] h-[95%] border border-red-500 items-center'>
-            <FlatList 
-                data={slides}
-                horizontal
-                pagingEnabled
-                showsHorizontalScrollIndicator={false}
-                renderItem={renderSlide}
-                keyExtractor={(item) => item.id}
-                onMomentumScrollEnd={(e) => {
-                    const index = Math.floor(e.nativeEvent.contentOffset.x / width);
-                    setCurrentIndex(index);
-                }}
-            />
-        </View>
+        <FlatList 
+            data={slides}
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
+            renderItem={renderSlide}
+            keyExtractor={(item) => item.id}
+            onMomentumScrollEnd={(e) => {
+                const index = Math.floor(e.nativeEvent.contentOffset.x / width * 0.95);
+                setCurrentIndex(index);
+            }}
+        />
+
     );
 }
 

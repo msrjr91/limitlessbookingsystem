@@ -79,7 +79,7 @@ const Community = () => {
   );
 
   return (
-    <View className="w-full h-full justify-start items-center">
+    // <View className="w-full h-full items-center">
       <FlatList
         data={slides}
         horizontal
@@ -92,7 +92,7 @@ const Community = () => {
           setCurrentIndex(index);
         }}
       />
-    </View>
+    // </View>
 
   );
 };

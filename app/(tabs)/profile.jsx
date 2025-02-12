@@ -95,7 +95,7 @@ const Profile = () => {
         </View>
         {/* 2/3 */}
         <View className='w-full h-[40%] bg-primary items-center justify-center rounded-xl'>
-          {/* <ProfileSlides /> */}
+          <ProfileSlides />
         </View>
         {/* 3/3 */}
         <View className='w-full h-[22%] flex-row justify-between pb-2'>
