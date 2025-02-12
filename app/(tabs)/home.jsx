@@ -5,8 +5,9 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '../../constants'
 import Events from '../homeContent/events';
-import MonthlyChallenges from '../homeContent/monthlyChallenges';
+// import MonthlyChallenges from '../misc/monthlyChallenges';
 import Community from '../homeContent/community';
+import Announcements from '../homeContent/announcements';
 
 const { width } = Dimensions.get('window');
 
@@ -16,7 +17,7 @@ const Home = () => {
 
   const homeItems = [
     {id: '1', title: 'Community'},
-    {id: '2', title: 'Monthly Challenges'}, 
+    {id: '2', title: 'Announcements'}, 
     {id: '3', title: 'Events'}, 
   ]
 
@@ -29,7 +30,7 @@ const Home = () => {
       case '1':
         return <Community />;
       case '2': 
-        return <MonthlyChallenges />
+        return <Announcements />
       case '3': 
         return <Events />
     }
@@ -59,7 +60,7 @@ const Home = () => {
         </View>
 
         <View className='h-full'>
-          <View className="mt-5">
+          <View className="mt-2">
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
@@ -89,7 +90,7 @@ const Home = () => {
           </View>
 
           {/* Line with dynamic underline */}
-          <View className="relative h-[1px] bg-[#080E13] mt-5">
+          <View className="relative h-[1px] bg-[#080E13] mt-2">
             <View
               className="absolute h-[2px] bg-[#FFA001] rounded-full"
               style={{

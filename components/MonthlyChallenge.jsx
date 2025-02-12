@@ -25,7 +25,7 @@ const MonthlyChallenge = ({
             justifyContent: 'center',
             alignItems: 'center'
         }}
-        className='w-full rounded-t-xl border-x-2 border-t-2 border-black bg-primary p-2 justify-between'
+        className='w-full rounded-t-xl border-x-2 border-t-2 border-secondary bg-primary p-2 justify-between'
         >
             <Image 
                 source={icons.rightArrow}
@@ -42,7 +42,7 @@ const MonthlyChallenge = ({
                 />
             </Pressable>
         </View>
-        <Text className='w-full h-full bg-white rounded-b-xl border-x-2 border-b-2 border black p-2 text-justify'>{description}</Text>
+        <Text className='w-full h-full bg-white rounded-b-xl border-x-2 border-b-2 border-secondary p-2 text-justify'>{description}</Text>
     </View>
   )
 }

@@ -99,12 +99,16 @@ const Profile = () => {
         </View>
         {/* 3/3 */}
         <View className='w-full h-[22%] flex-row justify-between pb-2'>
-          <ProfileCard 
-            style='w-[49%]'
-            icon={icons.challenge}
-            text={``}
-            textContext={`Monthly Challenges`}
-          />
+          <View className='w-[49%]'>
+            <Pressable onPress={() => router.push('/misc/monthlyChallenges')}>
+              <ProfileCard 
+                // style='w-[49%]'
+                icon={icons.challenge}
+                text={``}
+                textContext={`Monthly Challenges`}
+              />
+            </Pressable>
+          </View>
           <ProfileCard 
             style='w-[49%]'
             icon={icons.reward}

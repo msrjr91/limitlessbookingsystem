@@ -10,7 +10,7 @@ const Announcements = () => {
   }
 
   return (
-    <ScrollView className='w=full h-full'>
+    <ScrollView className='w=full h-full mt-3'>
       <MessageCard 
         name="Mike Ross"
         membership="gold"

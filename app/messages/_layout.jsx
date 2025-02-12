@@ -3,7 +3,6 @@ import { React, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '../../constants'
 import { router } from 'expo-router'
-import Announcements from './announcements'
 import Community from './community'
 import Trainers from './trainers'
 import DirectMessages from './directmessage'
@@ -14,10 +13,10 @@ const MessageLayout = () => {
   const [messagemenu, setmessagemenu] = useState('1')
 
   const menuItems = [
-    {id: '1', title: 'Announements'},
-    {id: '2', title: 'Community'}, 
-    {id: '3', title: 'Trainers'}, 
-    {id: '4', title: 'Your Messages'},
+    // {id: '1', title: 'Announements'},
+    {id: '1', title: 'Community'}, 
+    {id: '2', title: 'Trainers'}, 
+    {id: '3', title: 'Your Messages'},
   ]
 
   const handlePress = (id) => {
@@ -26,13 +25,13 @@ const MessageLayout = () => {
 
   const renderContent = () => {
     switch (messagemenu) {
+      // case '1':
+      //   return <Announcements />;
       case '1':
-        return <Announcements />;
-      case '2':
         return <Community />
-      case '3': 
+      case '2': 
         return <Trainers />
-      case '4':
+      case '3':
         return <DirectMessages />
     }
   }
@@ -63,7 +62,7 @@ const MessageLayout = () => {
             />
         </View>
         <View className='h-full'>
-          <View className="mt-5">
+          {/* <View className="mt-5">
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
@@ -88,10 +87,11 @@ const MessageLayout = () => {
                 </TouchableOpacity>
               ))}
             </ScrollView>
-          </View>
-          <View className="h-[1px] bg-[#080E13] my-5"/>
+          </View> */}
+          <View className="h-[1px] bg-[#080E13] my-3"/>
           <View className=''>
-            {renderContent()}
+            {/* {renderContent()} */}
+            <DirectMessages />
           </View>
         </View>
 
