@@ -41,6 +41,12 @@ import barchart from "../assets/icons/barchart.png";
 import weight from "../assets/icons/weight.png";
 import reward from "../assets/icons/reward.png";
 import challenge from "../assets/icons/challenge.png";
+import onetoone from "../assets/icons/onetoone.png";
+import onetotwo from "../assets/icons/onetotwo.png";
+import massage from "../assets/icons/massage.png";
+import nutrition from "../assets/icons/nutrition.png";
+import goalsetting from "../assets/icons/goalsetting.png";
+
 
 
 export default {
@@ -87,4 +93,9 @@ export default {
   weight,
   reward,
   challenge,
+  onetoone,
+  onetotwo,
+  massage,
+  nutrition,
+  goalsetting,
 };
