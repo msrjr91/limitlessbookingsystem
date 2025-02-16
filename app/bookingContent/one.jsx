@@ -10,9 +10,9 @@ const One = () => {
     // Hardcoded available times for each date
     const availableTimes = {
         "2025-02-15": {
-            morning: ["10:00 AM", "11:00 AM"],
-            afternoon: ["12:00 PM", "2:00 PM", "3:00 PM"],
-            night: ["5:00 PM", "7:00 PM"]
+            morning: ["7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM"],
+            afternoon: ["12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM"],
+            night: ["4:00 PM", "5:00 PM", "6:00 PM"]
         },
         "2025-02-16": {
             morning: ["9:00 AM", "10:00 AM"],
@@ -33,18 +33,8 @@ const One = () => {
 
     const handleTimeSelect = (time) => {
         setSelectedTime(time);
-    };
-
-    // Scroll to the bottom to show the selected time
-    const scrollToSelected = () => {
         if (scrollViewRef.current) {
-            scrollViewRef.current.scrollToEnd({ animated: true });
-        }
-    };
-
-    // Scroll content size change handler
-    const onContentSizeChange = (contentWidth, contentHeight) => {
-        if (selectedTime && scrollViewRef.current) {
+            // Scroll to the bottom to show the selected time
             scrollViewRef.current.scrollToEnd({ animated: true });
         }
     };
@@ -53,14 +43,17 @@ const One = () => {
         <ScrollView
             ref={scrollViewRef}
             contentContainerStyle={{ flexGrow: 1 }}
-            onContentSizeChange={onContentSizeChange}
         >
-            <View className="flex-1 bg-white p-4">
-                <Text className="text-lg font-bold text-gray-700 mb-3">Select a Date</Text>
+            <View className="flex-1 bg-white">
+                <Text className="text-lg font-bold text-gray-700 my-1 px-5">Select a Date</Text>
 
                 {/* Calendar Component */}
                 <Calendar
-                    style={{ width: '100%'}}
+                    style={{
+                        height: 300, // Set height of the calendar
+                        width: '100%',
+                        marginBottom: 5, // Add space below the calendar
+                    }}
                     onDayPress={handleDateSelect}
                     markedDates={selectedDate ? { [selectedDate]: { selected: true, marked: true, selectedColor: 'blue' } } : {}}
                     theme={{
@@ -71,14 +64,14 @@ const One = () => {
                 />
 
                 {/* Available Time Slots */}
-                <Text className="text-lg font-bold text-gray-700 mt-5 mb-2">Available Time Slots</Text>
+                <Text className="text-lg font-bold text-gray-700 mb-2 px-5">Available Time Slots</Text>
 
                 {selectedDate && availableTimes[selectedDate] ? (
                     <>
                         {/* Morning */}
-                        <View className="mb-4">
-                            <Text className="text-md font-semibold text-gray-700">Morning</Text>
-                            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 10 }}>
+                        <View className="mb-3 px-5">
+                            <Text className="text-md font-regular text-gray-700">Morning</Text>
+                            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 5 }}>
                                 {availableTimes[selectedDate].morning.map((time, index) => (
                                     <TouchableOpacity key={index} onPress={() => handleTimeSelect(time)}>
                                         <View className={`px-4 py-2 rounded-lg ${selectedTime === time ? 'bg-blue-500' : 'bg-gray-300'}`}>
@@ -90,9 +83,9 @@ const One = () => {
                         </View>
 
                         {/* Afternoon */}
-                        <View className="mb-4">
-                            <Text className="text-md font-semibold text-gray-700">Afternoon</Text>
-                            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 10 }}>
+                        <View className="mb-3 px-5">
+                            <Text className="text-md font-regular text-gray-700">Afternoon</Text>
+                            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 5 }}>
                                 {availableTimes[selectedDate].afternoon.map((time, index) => (
                                     <TouchableOpacity key={index} onPress={() => handleTimeSelect(time)}>
                                         <View className={`px-4 py-2 rounded-lg ${selectedTime === time ? 'bg-blue-500' : 'bg-gray-300'}`}>
@@ -104,9 +97,9 @@ const One = () => {
                         </View>
 
                         {/* Night */}
-                        <View className="mb-4">
-                            <Text className="text-md font-semibold text-gray-700">Night</Text>
-                            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 10 }}>
+                        <View className="px-5">
+                            <Text className="text-md font-regular text-gray-700">Night</Text>
+                            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 5 }}>
                                 {availableTimes[selectedDate].night.map((time, index) => (
                                     <TouchableOpacity key={index} onPress={() => handleTimeSelect(time)}>
                                         <View className={`px-4 py-2 rounded-lg ${selectedTime === time ? 'bg-blue-500' : 'bg-gray-300'}`}>
@@ -122,7 +115,7 @@ const One = () => {
                 )}
 
                 {selectedTime && (
-                    <Text className="text-lg font-bold text-green-600 mt-5">Selected: {selectedDate} at {selectedTime}</Text>
+                    <Text className="text-lg font-bold text-green-800 my-2 px-5">Selected: {selectedDate} at {selectedTime}</Text>
                 )}
             </View>
         </ScrollView>

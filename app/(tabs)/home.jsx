@@ -40,14 +40,13 @@ const Home = () => {
     <SafeAreaView className="bg-primary h-full relative">
 
         <View className="flex-row justify-between items-center p-2">
-          <Pressable onPress={() => router.back()}>
             <Image 
               source={icons.back}
               className="w-7 h-7 ml-3"
               resizeMode="contain"
-              style={{ tintColor: '#CDCDE0' }}
+              style={{ tintColor: '#0D2031' }}
             />
-          </Pressable>
+
           {/* <Text className="text-lg font-psemibold text-secondary">Your Notifications</Text> */}
           <Pressable onPress={() => router.push('/messages')}>
             <Image 

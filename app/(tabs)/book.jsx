@@ -36,14 +36,14 @@ const Book = () => {
             {/* Main Content */}
             <View className="h-full">
                 {/* Booking Selection */}
-                <View className="w-full h-[20%]">
-                    <Text className="text-lg font-psemibold text-white mb-3 px-5">Select a Session</Text>
+                <View className="w-full h-[15%]">
+                    <Text className="text-lg font-psemibold text-white mb-1 px-5">Select a Session</Text>
                     <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}
                         contentContainerStyle={{
                             flexDirection: 'row',
-                            gap: 12,
+                            gap: 10,
                             paddingHorizontal: 5,
                         }}
                     >
@@ -51,11 +51,11 @@ const Book = () => {
                             <TouchableOpacity key={item.id} onPress={() => handlePress(item.id)}>
                                 <View
                                     className={`px-2 py-2 items-center rounded-xl ${
-                                        bookingSelection === item.id ? 'bg-blue-500' : 'bg-gray-200'
+                                        bookingSelection === item.id ? 'bg-blue-700' : 'bg-gray-200'
                                     }`}
                                     style={{
                                         width: 100,
-                                        height: 100,
+                                        height: '100%',
                                         justifyContent: 'center',
                                         alignItems: 'center',
                                     }}
@@ -71,7 +71,7 @@ const Book = () => {
                 </View>
 
                 {/* Main Booking Section */}
-                <ScrollView className="h-[80%] mt-5 px-2">
+                <ScrollView className="h-[85%] mt-3">
                     {/* <View className="w-full justify-center items-center h-full px-4">
                         <Text className="text-lg font-psemibold text-secondary">     {bookingMenu.find((item) => item.id === bookingSelection)?.title || "Book a session here"}</Text>
                     </View> */}
