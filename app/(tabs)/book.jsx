@@ -37,7 +37,7 @@ const Book = () => {
             <View className="h-full">
                 {/* Booking Selection */}
                 <View className="w-full h-[15%]">
-                    <Text className="text-lg font-psemibold text-white mb-1 px-5">Select a Session</Text>
+                    <Text className="text-lg font-psemibold text-white mb-1 px-4">Select a Session</Text>
                     <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -51,7 +51,7 @@ const Book = () => {
                             <TouchableOpacity key={item.id} onPress={() => handlePress(item.id)}>
                                 <View
                                     className={`px-2 py-2 items-center rounded-xl ${
-                                        bookingSelection === item.id ? 'bg-blue-700' : 'bg-gray-200'
+                                        bookingSelection === item.id ? 'bg-blue-600' : 'bg-gray-200'
                                     }`}
                                     style={{
                                         width: 100,
@@ -71,7 +71,7 @@ const Book = () => {
                 </View>
 
                 {/* Main Booking Section */}
-                <ScrollView className="h-[85%] mt-3">
+                <ScrollView className="h-[85%] mt-3 bg-white">
                     {/* <View className="w-full justify-center items-center h-full px-4">
                         <Text className="text-lg font-psemibold text-secondary">     {bookingMenu.find((item) => item.id === bookingSelection)?.title || "Book a session here"}</Text>
                     </View> */}

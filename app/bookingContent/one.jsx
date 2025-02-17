@@ -3,13 +3,18 @@ import { View, Text, TouchableOpacity, ScrollView, Platform } from 'react-native
 import { Calendar } from 'react-native-calendars';
 
 const One = () => {
+    const today = new Date();
+    const formattedToday = today.getFullYear() + 
+        '-' + String(today.getMonth() + 1).padStart(2, '0') + 
+        '-' + String(today.getDate()).padStart(2, '0');
+    // console.log(`Today's date is ${formattedToday}`)
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
     const scrollViewRef = useRef(null); // Create a ref for ScrollView
 
     // Hardcoded available times for each date
     const availableTimes = {
-        "2025-02-15": {
+        "2025-02-18": {
             morning: ["7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM"],
             afternoon: ["12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM"],
             night: ["4:00 PM", "5:00 PM", "6:00 PM"]
@@ -45,23 +50,28 @@ const One = () => {
             contentContainerStyle={{ flexGrow: 1 }}
         >
             <View className="flex-1 bg-white">
-                <Text className="text-lg font-bold text-gray-700 my-1 px-5">Select a Date</Text>
+                <Text className="text-lg font-bold text-gray-700 my-1 px-4">Select a Date</Text>
 
                 {/* Calendar Component */}
                 <Calendar
-                    style={{
-                        height: 300, // Set height of the calendar
-                        width: '100%',
-                        marginBottom: 5, // Add space below the calendar
-                    }}
-                    onDayPress={handleDateSelect}
-                    markedDates={selectedDate ? { [selectedDate]: { selected: true, marked: true, selectedColor: 'blue' } } : {}}
-                    theme={{
-                        selectedDayBackgroundColor: 'blue',
-                        todayTextColor: 'red',
-                        arrowColor: 'blue',
-                    }}
-                />
+                  style={{
+                      height: 300,
+                      width: '100%',
+                      marginBottom: 5,
+                  }}
+                  minDate={formattedToday} // Ensures today is selectable
+                  markedDates={{
+                      [formattedToday]: { selected: selectedDate === formattedToday, marked: true, selectedColor: 'red' },
+                      ...(selectedDate ? { [selectedDate]: { selected: true, marked: true, selectedColor: 'blue' } } : {})
+                  }}
+                  onDayPress={handleDateSelect}
+                  // markedDates={selectedDate ? { [selectedDate]: { selected: true, marked: true, selectedColor: 'blue' } } : {}}
+                  theme={{
+                      selectedDayBackgroundColor: 'blue',
+                      todayTextColor: 'red',
+                      arrowColor: 'blue',
+                  }}
+              />
 
                 {/* Available Time Slots */}
                 <Text className="text-lg font-bold text-gray-700 mb-2 px-5">Available Time Slots</Text>
