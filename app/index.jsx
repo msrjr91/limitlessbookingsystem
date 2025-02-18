@@ -18,7 +18,8 @@ export default function App() {
         <CustomButton
           title="Continue with Email"
           handlePress={() => router.push('/sign-in')}
-          containerStyles="w-[90%] absolute bottom-10"
+          containerStyles="w-[90%] absolute bottom-10 bg-secondary"
+          textStyles={'font-regular'}
         />
         {/* Delete after implementing auth */}
         <Link href="/home" className="text-lg font-psemibold text-secondary">Skip Sign in</Link> 

@@ -47,7 +47,8 @@ const SignIn = () => {
           <CustomButton 
             title="Sign In"
             handlePress={submit}
-            containerStyles="mt-10 w-full"
+            containerStyles="bg-secondary mt-10 w-full"
+            textStyles={'font-pregular'}
             isLoading={isSubmitting}
           />     
           <View className="justify-center pt-5 flex-row gap-2">

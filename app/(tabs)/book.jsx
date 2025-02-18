@@ -1,6 +1,6 @@
-import { View, Text, Image, ScrollView, Pressable, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView, Pressable, TouchableOpacity } from 'react-native';
 import { React, useState } from 'react';
-import { Link, router, Tabs } from 'expo-router';
+import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { icons } from '../../constants';
@@ -20,6 +20,8 @@ const Book = () => {
     const handlePress = (id) => {
         setBookingSelection(id);
     };
+
+    const selectedTitle = bookingMenu.find(item => item.id === bookingSelection)?.title || "Book a session here";
 
     return (
         <SafeAreaView className="bg-primary h-full relative">
@@ -75,7 +77,9 @@ const Book = () => {
                     {/* <View className="w-full justify-center items-center h-full px-4">
                         <Text className="text-lg font-psemibold text-secondary">     {bookingMenu.find((item) => item.id === bookingSelection)?.title || "Book a session here"}</Text>
                     </View> */}
-                    <One />
+                    <One 
+                      trainingType={selectedTitle}
+                    />
                 </ScrollView>
             </View>
 
