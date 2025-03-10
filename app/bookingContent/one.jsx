@@ -18,17 +18,17 @@ const One = ({
 
     // Hardcoded available times for each date
     const availableTimes = {
-        "2025-02-18": {
+        "2025-03-18": {
             am: ["7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM"],
             pm: ["1:00 PM", "2:00 PM", "3:00 PM","4:00 PM", "5:00 PM", "6:00 PM"],
             waitlist: ["12:00 PM"]
         },
-        "2025-02-16": {
+        "2025-03-16": {
             am: ["9:00 AM", "10:00 AM", "11:00 AM"],
             pm: ["1:00 PM", "4:00 PM"],
             waitlist: []
         },
-        "2025-02-17": {
+        "2025-03-17": { 
             am: ["8:30 AM", "10:30 AM",],
             pm: ["1:00 PM", "3:00 PM"],
             waitlist: []
@@ -62,18 +62,17 @@ const One = ({
                 {/* Calendar Component */}
                 <Calendar
                   style={{
-                      height: 300,
+                      height: 350,
                       width: '100%',
                       marginBottom: 5,
                   }}
                   minDate={formattedToday}
                   markedDates={{
                       [formattedToday]: { selected: selectedDate === formattedToday, selectedColor: 'red' },
-                      ...(selectedDate ? { [selectedDate]: { selected: true, marked: true, selectedColor: 'blue' } } : {})
+                      ...(selectedDate ? { [selectedDate]: { selected: true, marked: true, selectedColor: '#2563EB' } } : {})
                   }}
                   onDayPress={handleDateSelect}
                   theme={{
-                      selectedDayBackgroundColor: 'blue',
                       todayTextColor: 'red',
                       arrowColor: 'blue',
                   }}
@@ -119,7 +118,7 @@ const One = ({
 
                           {/* Waitlist Slots */}
                           {availableTimes[selectedDate].waitlist.length > 0 && (
-                              <View className="px-5">
+                              <View className="mb-3 px-5">
                                   <Text className="text-md font-regular text-gray-700">Waitlist</Text>
                                   <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 5 }}>
                                       {availableTimes[selectedDate].waitlist.map((time, index) => (

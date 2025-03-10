@@ -30,6 +30,7 @@ const Book = () => {
                 <Pressable onPress={() => router.back()}>
                     <Image source={icons.back} className="w-7 h-7 ml-3" resizeMode="contain" style={{ tintColor: '#CDCDE0' }} />
                 </Pressable>
+                <Text className="text-lg font-psemibold text-white mb-1 text-center">Select a Session</Text>
                 <Pressable onPress={() => router.push('/messages')}>
                     <Image source={icons.chat} className="w-7 h-7 mr-3" resizeMode="contain" style={{ tintColor: '#CDCDE0' }} />
                 </Pressable>
@@ -38,8 +39,8 @@ const Book = () => {
             {/* Main Content */}
             <View className="h-full">
                 {/* Booking Selection */}
-                <View className="w-full h-[15%]">
-                    <Text className="text-lg font-psemibold text-white mb-1 px-4">Select a Session</Text>
+                <View className="w-full h-[5%]">
+
                     <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}
@@ -52,21 +53,25 @@ const Book = () => {
                         {bookingMenu.map((item) => (
                             <TouchableOpacity key={item.id} onPress={() => handlePress(item.id)}>
                                 <View
-                                    className={`px-2 py-2 items-center rounded-xl ${
+                                    className={`px-3 py-2 flex-row items-center justify-center rounded-xl ${
                                         bookingSelection === item.id ? 'bg-blue-600' : 'bg-gray-200'
                                     }`}
                                     style={{
-                                        width: 100,
-                                        height: '100%',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
+                                        alignSelf: 'flex-start', 
                                     }}
                                 >
-                                    <Image source={item.icon} style={{ width: 30, height: 30, tintColor: bookingSelection === item.id ? 'white' : 'black' }} />
-                                    <Text className={`text-sm font-psemibold mt-2 ${bookingSelection === item.id ? 'text-white' : 'text-black'}`}>
+                                    <Image 
+                                        source={item.icon} 
+                                        style={{ width: 20, height: 20, tintColor: bookingSelection === item.id ? 'white' : 'black', marginRight: 5 }} 
+                                    />
+                                    <Text 
+                                        className={`text-sm font-psemibold ${bookingSelection === item.id ? 'text-white' : 'text-black'}`}
+                                    >
                                         {item.title}
                                     </Text>
                                 </View>
+
+
                             </TouchableOpacity>
                         ))}
                     </ScrollView>
@@ -74,9 +79,6 @@ const Book = () => {
 
                 {/* Main Booking Section */}
                 <ScrollView className="h-[85%] mt-3 bg-white">
-                    {/* <View className="w-full justify-center items-center h-full px-4">
-                        <Text className="text-lg font-psemibold text-secondary">     {bookingMenu.find((item) => item.id === bookingSelection)?.title || "Book a session here"}</Text>
-                    </View> */}
                     <One 
                       trainingType={selectedTitle}
                     />
