@@ -1,6 +1,6 @@
 import { Image, View, Text, Dimensions } from 'react-native'
 import React from 'react'
-import { Tabs, Redirect } from 'expo-router'
+import { Tabs } from 'expo-router'
 import { icons } from '../../constants'
 
 const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window')

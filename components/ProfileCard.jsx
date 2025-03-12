@@ -12,7 +12,7 @@ const ProfileCard = ({
     iconHeight
 }) => {
   return (
-    <View className={`flex-col justify-evenly h-full p-1 rounded-xl bg-primary items-center ${style}`}>
+    <View className={`flex-col justify-evenly p-2 rounded-xl items-center ${style}`}>
         <Image 
             source={icon}
             resizeMode='contain'

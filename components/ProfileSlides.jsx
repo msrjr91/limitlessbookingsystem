@@ -46,9 +46,11 @@ const ChartSlide = ({ title, icon, data }) => {
   const values = data.map((item) => item.value);
 
   return (
-    <View style={{ alignItems: "center", justifyContent: "center", width: width * 0.9, padding: 20 }}>
-      <Image source={icon} style={{ width: 30, height: 30, marginBottom: 10 }} />
-      <Text style={{ fontSize: 18, fontWeight: "bold", marginBottom: 10 }}>{title}</Text>
+    <View style={{ alignItems: "center", justifyContent: "center", width, padding: 5 }} className=''>
+      <View className='flex-row items-center justify-center w-full mb-2'>
+        <Image source={icon} style={{ width: 30, height: 30, marginRight: 10 }} />
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>{title}</Text>
+      </View>
       <LineChart
         data={{
           labels: labels,
@@ -74,15 +76,47 @@ const ChartSlide = ({ title, icon, data }) => {
 };
 
 const ProfileSlides = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleViewableItemsChanged = ({ viewableItems }) => {
+    if (viewableItems.length > 0) {
+      setCurrentIndex(viewableItems[0].index);
+    }
+  };
+
+  const renderDot = (index) => {
+    return (
+      <View
+        key={index}
+        style={{
+          width: 8,
+          height: 8,
+          margin: 3,
+          borderRadius: 4,
+          backgroundColor: index === currentIndex ? "blue" : "gray",
+        }}
+      />
+    );
+  };
+
   return (
-    <FlatList
-      data={dataSets}
-      keyExtractor={(item) => item.title}
-      horizontal
-      pagingEnabled
-      showsHorizontalScrollIndicator={false}
-      renderItem={({ item }) => <ChartSlide title={item.title} icon={item.icon} data={item.data} />}
-    />
+    <View style={{ alignItems: "center" }}>
+      <FlatList
+        data={dataSets}
+        keyExtractor={(item) => item.title}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <ChartSlide title={item.title} icon={item.icon} data={item.data} />}
+        onViewableItemsChanged={handleViewableItemsChanged}
+        viewabilityConfig={{
+          itemVisiblePercentThreshold: 50,
+        }}
+      />
+      <View style={{ flexDirection: "row", marginTop: 10 }}>
+        {dataSets.map((_, index) => renderDot(index))}
+      </View>
+    </View>
   );
 };
 
