@@ -23,9 +23,9 @@ const ProfileCard = ({
         />
         {
           text &&
-          <Text className="text-white text-xl font-pbold text-center">{text}</Text>
+          <Text className="text-primary text-xl font-pbold text-center">{text}</Text>
         }
-        <Text className="text-white text-md font-psemibold">{textContext}</Text>
+        <Text className="text-primary text-md font-psemibold">{textContext}</Text>
     </View>
   )
 }

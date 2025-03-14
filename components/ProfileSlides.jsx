@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { icons } from "../constants";
 import { LineChart } from "react-native-chart-kit";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const dataSets = [
   {
@@ -44,36 +44,49 @@ const dataSets = [
 const ChartSlide = ({ title, icon, data }) => {
   const labels = data.map((item) => item.date);
   const values = data.map((item) => item.value);
+  const minValue = Math.floor(Math.min(...values)); // Round down
+  const maxValue = Math.ceil(Math.max(...values) + 1);  // Add a buffer to max value for better spacing
 
   return (
-    <View style={{ alignItems: "center", justifyContent: "center", width, padding: 5 }} className=''>
-      <View className='flex-row items-center justify-center w-full mb-2'>
-        <Image source={icon} style={{ width: 30, height: 30, marginRight: 10 }} />
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>{title}</Text>
+    <View style={{ alignItems: "center", justifyContent: "center", width }} className='border border-red-500'>
+      <View className="flex-row items-center justify-center w-full mb-2">
+        <Image source={icon} style={{ width: 25, height: 25, marginRight: 10 }} />
+        <Text style={{ fontSize: 14, fontWeight: "bold", color: 'white' }}>{title}</Text>
       </View>
+
       <LineChart
         data={{
-          labels: labels,
+          labels: data.map((item) => item.date), // Extract labels dynamically
           datasets: [{ data: values }],
         }}
-        width={width * 0.8}
+        width={width * 0.9}
         height={220}
         yAxisSuffix=" kg"
+        fromZero={false} 
+        yAxisInterval={0.5} 
         chartConfig={{
           backgroundGradientFrom: "#fff",
           backgroundGradientTo: "#fff",
           decimalPlaces: 1,
           color: (opacity = 1) => `rgba(0, 122, 255, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+          propsForBackgroundLines: {
+            stroke: "transparent",
+          },
+          gridBackgroundColor: "transparent",
         }}
         bezier
         style={{
           borderRadius: 10,
+          // alignSelf: "center",
         }}
+        yAxisMin={minValue} // Dynamically adjust y-axis minimum
+        yAxisMax={maxValue} // Apply the adjusted max value
       />
     </View>
   );
 };
+
 
 const ProfileSlides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -91,9 +104,9 @@ const ProfileSlides = () => {
         style={{
           width: 8,
           height: 8,
-          margin: 3,
+          margin: 2,
           borderRadius: 4,
-          backgroundColor: index === currentIndex ? "blue" : "gray",
+          backgroundColor: index === currentIndex ? "#D69006" : "#CDCDE0",
         }}
       />
     );
@@ -113,7 +126,7 @@ const ProfileSlides = () => {
           itemVisiblePercentThreshold: 50,
         }}
       />
-      <View style={{ flexDirection: "row", marginTop: 10 }}>
+      <View style={{ flexDirection: "row", marginTop: 5 }}>
         {dataSets.map((_, index) => renderDot(index))}
       </View>
     </View>
